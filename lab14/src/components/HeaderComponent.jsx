@@ -12,7 +12,7 @@ function HeaderComponent() {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
                 <span className="navbar-brand mb-0 h1">SeriesApp</span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
