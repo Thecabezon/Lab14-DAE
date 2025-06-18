@@ -1,10 +1,9 @@
 // src/components/HeaderComponent.jsx
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AppContext } from "../contexts/AppContext";
+import { useUserStore } from "../stores/useUserStore";
 
 function HeaderComponent() {
-    const { usuario, logout } = useContext(AppContext);
+    const { usuario, logout } = useUserStore();
     const navigate = useNavigate();
 
     const handleLogout = () => {

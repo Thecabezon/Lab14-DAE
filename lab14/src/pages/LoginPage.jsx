@@ -1,12 +1,12 @@
 // src/pages/LoginPage.jsx
 import { useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
-import { AppContext } from "../contexts/AppContext";
+import { useState } from "react";
+import { useUserStore } from "../stores/useUserStore";
 import { loginService } from "../services/LoginService";
 
 function LoginPage() {
     const navigate = useNavigate();
-    const { login } = useContext(AppContext);
+    const { login } = useUserStore(); 
     
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +18,7 @@ function LoginPage() {
 
         try {
             const data = await loginService({ username, password });
-            console.log("Respuesta del servicio web:", data); // Para verificar en consola
+            console.log("Respuesta del servicio web:", data);
             login(data);
             navigate("/home");
         } catch (err) {
@@ -49,7 +49,6 @@ function LoginPage() {
                                     <div className="mb-3">
                                         <div className="mb-2 w-100">
                                             <label className="text-muted" htmlFor="password">Contraseña</label>
-                                            
                                         </div>
                                         <input id="password" type="password" className="form-control" name="password" required 
                                             value={password}

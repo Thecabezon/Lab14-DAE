@@ -7,26 +7,24 @@ import SeriePage from './pages/SeriePage'
 import SerieFormPage from './pages/SerieFormPage'
 import CategoryFormPage from './pages/CategoryFormPage'
 import PrimaryLayout from './layout/PrimaryLayout'
-import { AppContextProvider } from './contexts/AppContext'
 
 function App() {
   return (
-    <AppContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route element={<PrimaryLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/categories" element={<CategoryPage />} />
-            <Route path="/series" element={<SeriePage />} />
-            <Route path="/series/new" element={<SerieFormPage />} />
-            <Route path="/series/edit/:id" element={<SerieFormPage />} />
-            <Route path="/categories/new" element={<CategoryFormPage />} />
-            <Route path="/categories/edit/:id" element={<CategoryFormPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AppContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route element={<PrimaryLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/categories" element={<CategoryPage />} />
+          <Route path="/series" element={<SeriePage />} />
+          <Route path="/series/new" element={<SerieFormPage />} />
+          <Route path="/series/edit/:id" element={<SerieFormPage />} />
+          <Route path="/categories/new" element={<CategoryFormPage />} />
+          <Route path="/categories/edit/:id" element={<CategoryFormPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
 export default App
